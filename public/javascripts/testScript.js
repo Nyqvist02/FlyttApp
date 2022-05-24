@@ -2,11 +2,21 @@
 
 console.log('Initial commit');
 
-const sendData = (jobInfo) => {
-    const jobTime = {
-        hours: 99,
-        streetName: 'Vasagatan 2 fjutti fjutt',
-        notes: 'Shitty day'
+const sendData = () => {
+
+    console.log(document.getElementById('date').value);
+    console.log(document.getElementById('street1').value);
+    console.log(document.getElementById('street2').value);
+    console.log(document.getElementById('hours').value);
+    console.log(document.getElementById('notes').value);
+
+    const jobInfo = {
+        name: 'Ludvig',
+        date: document.getElementById('date').value,
+        street1: document.getElementById('street1').value,
+        street2: document.getElementById('street2').value,
+        hours: parseFloat(document.getElementById('hours').value),
+        notes: document.getElementById('notes').value
     }
     
     const postOptions = {
@@ -25,10 +35,6 @@ const sendData = (jobInfo) => {
     });
 }
 
-
-
-
-
 const getData = () => {
     //Hämtar sparade datan från "databasen"
     fetch('/data').then(res => res.json()).then(data => {
@@ -40,3 +46,6 @@ const getData = () => {
     console.log(data);
     }
 }
+
+const submitBtn = document.getElementById('submit');
+submitBtn.addEventListener('click', sendData);
