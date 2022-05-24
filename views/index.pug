@@ -1,5 +1,30 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .continer-sm.border.border-primary.w-50
+    h1.text-center Testing heading
+    .row.row-cols-1.w-75.mx-auto
+
+      label.form-label.p-0.mb-0 Datum
+      .input-group.mb-3.col-1.align-self-center.p-0 
+        input(id = 'date' type='text' class='form-control' placeholder = 't.ex 22/05/2022')
+
+      label.form-label.p-0.mb-0 Gata 1
+      .input-group.mb-3.col-1.align-self-center.p-0 
+        input(id = 'street1' type='text' class='form-control' placeholder = 't.ex Vattugatan 4')
+     
+      label.form-label.p-0.mb-0 Gata 2
+      .input-group.mb-3.col-1.align-self-center.p-0 
+        input(id = 'street2' type='text' class='form-control' placeholder = 't.ex Mannavägen 8')
+
+      label.form-label.p-0.mb-0 Arbetstimmar
+      .input-group.mb-3.col-1.align-self-center.p-0
+        input(id = 'hours' type='text' class='form-control' placeholder = 't.ex 6.30 eller 8')
+
+      label.form-label.p-0.mb-0 Anteckningar
+      .input-group.mb-3.col-1.align-self-center.p-0 
+        input(id = 'notes' type='text' class='form-control' placeholder = 'Skriv...')
+
+      .container-sm.mb-5
+        .row.justify-content-end
+          button(id = 'submit' type = 'button').btn.btn-primary.col-3 Spara
